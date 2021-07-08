@@ -4,7 +4,7 @@
 	{
 		static void Main()
 		{
-			using (var game = new EmulatorGame())
+			using (var game = new MainGame())
 				game.Run();
 		}
 	}

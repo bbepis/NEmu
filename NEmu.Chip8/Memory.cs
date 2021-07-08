@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 
 namespace NEmu.Chip8
 {
@@ -10,28 +9,22 @@ namespace NEmu.Chip8
 		public byte[] Registers = new byte[16];
 		public ushort I, PC;
 
-		public bool GraphicsDirtied = false;
+		public Stack<ushort> CallStack = new Stack<ushort>(16);
 
-		public Stack<ushort> CallStack;
-
-		public readonly byte[] RAM = new byte[4096];
-		public readonly byte[] VRAM = new byte[256];
+		public byte[] RAM = new byte[4096];
+		public byte[] VRAM = new byte[256];
 
 		public void Initialize()
 		{
-			for (int i = 0; i < 16; i++)
-				Registers[i] = 0;
-
 			DelayTimer = SoundTimer = 0;
 			I = 0;
 			PC = 0x200;
+			
+			CallStack.Clear();
 
-			CallStack = new Stack<ushort>(16);
-
-			for (int i = 0; i < 4096; i++)
-				RAM[i] = 0;
-			for (int i = 0; i < 256; i++)
-				VRAM[i] = 0;
+			Registers.ZeroArray();
+			RAM.ZeroArray();
+			VRAM.ZeroArray();
 
 			byte[] fontData =
 			{

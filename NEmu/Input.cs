@@ -31,18 +31,18 @@ namespace NEmu
 	        => CurrentKeyboardState.IsKeyUp(input);
 
         public static bool KeyPressed(Keys input)
-	        => EmulatorGame.Instance.IsActive && CurrentKeyboardState.IsKeyDown(input) && !lastKeyboardState.IsKeyDown(input);
+	        => MainGame.Instance.IsActive && CurrentKeyboardState.IsKeyDown(input) && !lastKeyboardState.IsKeyDown(input);
 
         public static bool MouseLeftDown
-	        => EmulatorGame.Instance.IsActive && CurrentMouseState.LeftButton == ButtonState.Pressed;
+	        => MainGame.Instance.IsActive && CurrentMouseState.LeftButton == ButtonState.Pressed;
 
         public static bool MouseRightDown
-	        => EmulatorGame.Instance.IsActive && CurrentMouseState.RightButton == ButtonState.Pressed;
+	        => MainGame.Instance.IsActive && CurrentMouseState.RightButton == ButtonState.Pressed;
 
         public static bool MouseLeftClicked
-	        => EmulatorGame.Instance.IsActive && CurrentMouseState.LeftButton == ButtonState.Pressed && lastMouseState.LeftButton == ButtonState.Released;
+	        => MainGame.Instance.IsActive && CurrentMouseState.LeftButton == ButtonState.Pressed && lastMouseState.LeftButton == ButtonState.Released;
 
         public static bool MouseRightClicked
-	        => EmulatorGame.Instance.IsActive && CurrentMouseState.RightButton == ButtonState.Pressed && lastMouseState.RightButton == ButtonState.Released;
+	        => MainGame.Instance.IsActive && CurrentMouseState.RightButton == ButtonState.Pressed && lastMouseState.RightButton == ButtonState.Released;
     }
 }

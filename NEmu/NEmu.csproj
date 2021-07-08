@@ -40,9 +40,13 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Content\Arial.xnb">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmulatorGame.cs" />
+    <Compile Include="EmulatorHandler.cs" />
+    <Compile Include="MainGame.cs" />
     <Compile Include="Input.cs" />
     <Compile Include="Program.cs" />
   </ItemGroup>
@@ -58,48 +62,51 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <winx64 Include="D:\Sourcecode\GitHub-Bepis\NBoy\libs\x64\FAudio.dll">
+    <winx64 Include="$(SolutionDir)\libs\x64\FAudio.dll">
       <Link>lib\FAudio.dll</Link>
     </winx64>
-    <winx64 Include="D:\Sourcecode\GitHub-Bepis\NBoy\libs\x64\FNA3D.dll">
+    <winx64 Include="$(SolutionDir)\libs\x64\FNA3D.dll">
       <Link>lib\FNA3D.dll</Link>
     </winx64>
-    <winx64 Include="D:\Sourcecode\GitHub-Bepis\NBoy\libs\x64\libtheorafile.dll">
+    <winx64 Include="$(SolutionDir)\libs\x64\libtheorafile.dll">
       <Link>lib\libtheorafile.dll</Link>
     </winx64>
-    <winx64 Include="D:\Sourcecode\GitHub-Bepis\NBoy\libs\x64\SDL2.dll">
+    <winx64 Include="$(SolutionDir)\libs\x64\SDL2.dll">
       <Link>lib\SDL2.dll</Link>
     </winx64>
-    <osx Include="D:\Sourcecode\GitHub-Bepis\NBoy\libs\osx\libFAudio.0.dylib">
+    <osx Include="$(SolutionDir)\libs\osx\libFAudio.0.dylib">
       <Link>lib\libFAudio.0.dylib</Link>
     </osx>
-    <osx Include="D:\Sourcecode\GitHub-Bepis\NBoy\libs\osx\libFNA3D.0.dylib">
+    <osx Include="$(SolutionDir)\libs\osx\libFNA3D.0.dylib">
       <Link>lib\libFNA3D.0.dylib</Link>
     </osx>
-    <osx Include="D:\Sourcecode\GitHub-Bepis\NBoy\libs\osx\libMoltenVK.dylib">
+    <osx Include="$(SolutionDir)\libs\osx\libMoltenVK.dylib">
       <Link>lib\libMoltenVK.dylib</Link>
     </osx>
-    <osx Include="D:\Sourcecode\GitHub-Bepis\NBoy\libs\osx\libSDL2-2.0.0.dylib">
+    <osx Include="$(SolutionDir)\libs\osx\libSDL2-2.0.0.dylib">
       <Link>lib\libSDL2-2.0.0.dylib</Link>
     </osx>
-    <osx Include="D:\Sourcecode\GitHub-Bepis\NBoy\libs\osx\libtheorafile.dylib">
+    <osx Include="$(SolutionDir)\libs\osx\libtheorafile.dylib">
       <Link>lib\libtheorafile.dylib</Link>
     </osx>
-    <osx Include="D:\Sourcecode\GitHub-Bepis\NBoy\libs\osx\libvulkan.1.dylib">
+    <osx Include="$(SolutionDir)\libs\osx\libvulkan.1.dylib">
       <Link>lib\libvulkan.1.dylib</Link>
     </osx>
-    <linux64 Include="D:\Sourcecode\GitHub-Bepis\NBoy\libs\lib64\libFAudio.so.0">
+    <linux64 Include="$(SolutionDir)\libs\lib64\libFAudio.so.0">
       <Link>lib\libFAudio.so.0</Link>
     </linux64>
-    <linux64 Include="D:\Sourcecode\GitHub-Bepis\NBoy\libs\lib64\libFNA3D.so.0">
+    <linux64 Include="$(SolutionDir)\libs\lib64\libFNA3D.so.0">
       <Link>lib\libFNA3D.so.0</Link>
     </linux64>
-    <linux64 Include="D:\Sourcecode\GitHub-Bepis\NBoy\libs\lib64\libSDL2-2.0.so.0">
+    <linux64 Include="$(SolutionDir)\libs\lib64\libSDL2-2.0.so.0">
       <Link>lib\libSDL2-2.0.so.0</Link>
     </linux64>
-    <linux64 Include="D:\Sourcecode\GitHub-Bepis\NBoy\libs\lib64\libtheorafile.so">
+    <linux64 Include="$(SolutionDir)\libs\lib64\libtheorafile.so">
       <Link>lib\libtheorafile.so</Link>
     </linux64>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
   </ItemGroup>
   <ItemGroup />
   <Target Name="AfterBuild">

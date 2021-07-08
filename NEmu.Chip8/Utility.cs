@@ -7,7 +7,13 @@ namespace NEmu.Chip8
 		public EmulatorException(string message) : base(message) { }
 	}
 
-	class Utility
+	static class Utility
 	{
+		public static void ZeroArray(this byte[] array)
+		{
+			int l = array.Length;
+			for (int i = 0; i < l; i++)
+				array[i] = 0;
+		}
 	}
 }
